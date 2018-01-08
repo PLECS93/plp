@@ -22,7 +22,7 @@ public class TreeHighestMapper extends Mapper<IntWritable, Text, Text, IntWritab
 		{
 			String[] splitted = line.split(";(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
 			
-			// Extract the tree's type
+			// Extract the tree's height
 			String height = splitted[6];
 			
 			if(height == null | height.length() == 0) {
