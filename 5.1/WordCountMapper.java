@@ -23,13 +23,16 @@ public class WordCountMapper extends Mapper<LongWritable, Text, Text, IntWritabl
 		
 		for(String word: words )
 		{
-		  // add the docName as docId
-		  word = word + "$" + fileName;
-		  
-		  Text keyS = new Text(word);
-				  
-		  IntWritable valS = new IntWritable(1);
-		  context.write(keyS, valS);
+			if(word.length() > 3)
+			{
+			  // add the docName as docId
+			  word = word + "$" + fileName;
+			  
+			  Text keyS = new Text(word);
+					  
+			  IntWritable valS = new IntWritable(1);
+			  context.write(keyS, valS);
+			}
 		}
     }
 }
