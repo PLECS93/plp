@@ -23,7 +23,7 @@ public class TreesCountMapper extends Mapper<IntWritable, Text, Text, IntWritabl
 			String[] splitted = line.split(";(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
 			
 			// Extract the tree's type
-			String type = splitted[4];
+			String type = splitted[3];
 			
 			if(type == null | type.length() == 0) {
 				type = " NA ";
